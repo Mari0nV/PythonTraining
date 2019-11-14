@@ -12,10 +12,6 @@ condition_receive_command = Condition()
 class Cook(Thread):
     def __init__(self):
         Thread.__init__(self)
-        self.waiter = None
-
-    def add_waiter(self, waiter):
-        self.waiter = waiter
 
     def cook(self):
         print("Cook starts cooking")
@@ -32,9 +28,8 @@ class Cook(Thread):
 
 
 class Waiter(Thread):
-    def __init__(self, cook):
+    def __init__(self):
         Thread.__init__(self)
-        self.cook = cook
         self.cash = 0
 
     def bring_command_to_cook(self):
@@ -72,9 +67,8 @@ class Waiter(Thread):
 
 
 class Customer(Thread):
-    def __init__(self, waiter):
+    def __init__(self):
         Thread.__init__(self)
-        self.waiter = waiter
 
     def eat(self):
         print("Customer starts eating")
@@ -95,15 +89,10 @@ class Customer(Thread):
 
 
 if __name__ == '__main__':
-    cook = Cook()
-    waiter = Waiter(cook)
-    cook.add_waiter(waiter)
-    customer = Customer(waiter)
+    threads = [Cook(), Waiter(), Customer()]
 
-    waiter.start()
-    cook.start()
-    customer.start()
+    for thread in threads:
+        thread.start()
 
-    cook.join()
-    customer.join()
-    waiter.join()
+    for thread in threads:
+        thread.join()

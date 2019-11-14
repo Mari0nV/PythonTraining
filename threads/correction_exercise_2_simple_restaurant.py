@@ -1,12 +1,12 @@
-from threading import Thread, Condition
+from threading import Thread, Event
 import time
 
 
-condition_customer = Condition()
-condition_new_order = Condition()
-condition_order_ready = Condition()
-condition_eaten = Condition()
-condition_receive_command = Condition()
+condition_customer = Event()
+condition_new_order = Event()
+condition_order_ready = Event()
+condition_eaten = Event()
+condition_receive_command = Event()
 
 
 class Cook(Thread):
@@ -16,13 +16,11 @@ class Cook(Thread):
     def cook(self):
         print("Cook starts cooking")
         time.sleep(5)
-        with condition_order_ready:
-            condition_order_ready.notify()
+        condition_order_ready.set()
 
     def run(self):
         # wait for command from waiter
-        with condition_new_order:
-            condition_new_order.wait()
+        condition_new_order.wait()
         # cook
         self.cook()
 
@@ -36,14 +34,12 @@ class Waiter(Thread):
         print("Waiter takes command and brings it to Cook")
         time.sleep(1)
         # tell cook there is a new order
-        with condition_new_order:
-            condition_new_order.notify()
+        condition_new_order.set()
 
     def bring_command_to_customer(self):
         print("Waiter brings command to Customer")
         time.sleep(1)
-        with condition_receive_command:
-            condition_receive_command.notify()
+        condition_receive_command.set()
 
     def cashing(self):
         print("Customer pays for his meal")
@@ -51,18 +47,15 @@ class Waiter(Thread):
 
     def run(self):
         # wait for customer to arrive and take command
-        with condition_customer:
-            condition_customer.wait()
+        condition_customer.wait()
         self.bring_command_to_cook()
 
         # wait for command to be ready
-        with condition_order_ready:
-            condition_order_ready.wait()
+        condition_order_ready.wait()
         self.bring_command_to_customer()
 
         # wait for customer to finish his meal
-        with condition_eaten:
-            condition_eaten.wait()
+        condition_eaten.wait()
         self.cashing()
 
 
@@ -73,17 +66,14 @@ class Customer(Thread):
     def eat(self):
         print("Customer starts eating")
         time.sleep(5)
-        with condition_eaten:
-            condition_eaten.notify()
+        condition_eaten.set()
 
     def run(self):
         # notify waiter of its presence and make command
-        with condition_customer:
-            condition_customer.notify()
+        condition_customer.set()
 
         # wait for food
-        with condition_receive_command:
-            condition_receive_command.wait()
+        condition_receive_command.wait()
 
         self.eat()
 

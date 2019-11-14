@@ -10,10 +10,10 @@ class MyOpenContextManager:
         self.file = file
 
     def __enter__(self):
-        fd = open(self.file, "r")
+        self.fd = open(self.file, "r")
         return fd
     def __exit__(self, type, value, traceback):
-        fd.close()
+        self.fd.close()
 ```
 
 ### Question 2
@@ -73,6 +73,8 @@ So if you want a behavior applied each time a function is called, a decorator is
 In the case of our exercise, we want Esmeralda to be polite each time she asks for something, so using a decorator is a good idea.
 
 ### Question 4
+
+This question can be answered very simply with ```re.sub```, however I wanted a bit of challenge and decided to use the properties of closures to do it.
 
 ```
 from types import CodeType

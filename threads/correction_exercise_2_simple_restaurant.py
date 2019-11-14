@@ -2,11 +2,11 @@ from threading import Thread, Event
 import time
 
 
-condition_customer = Event()
-condition_new_order = Event()
-condition_order_ready = Event()
-condition_eaten = Event()
-condition_receive_command = Event()
+event_customer = Event()
+event_new_order = Event()
+event_order_ready = Event()
+event_eaten = Event()
+event_receive_command = Event()
 
 
 class Cook(Thread):
@@ -16,11 +16,11 @@ class Cook(Thread):
     def cook(self):
         print("Cook starts cooking")
         time.sleep(5)
-        condition_order_ready.set()
+        event_order_ready.set()
 
     def run(self):
         # wait for command from waiter
-        condition_new_order.wait()
+        event_new_order.wait()
         # cook
         self.cook()
 
@@ -34,12 +34,12 @@ class Waiter(Thread):
         print("Waiter takes command and brings it to Cook")
         time.sleep(1)
         # tell cook there is a new order
-        condition_new_order.set()
+        event_new_order.set()
 
     def bring_command_to_customer(self):
         print("Waiter brings command to Customer")
         time.sleep(1)
-        condition_receive_command.set()
+        event_receive_command.set()
 
     def cashing(self):
         print("Customer pays for his meal")
@@ -47,15 +47,15 @@ class Waiter(Thread):
 
     def run(self):
         # wait for customer to arrive and take command
-        condition_customer.wait()
+        event_customer.wait()
         self.bring_command_to_cook()
 
         # wait for command to be ready
-        condition_order_ready.wait()
+        event_order_ready.wait()
         self.bring_command_to_customer()
 
         # wait for customer to finish his meal
-        condition_eaten.wait()
+        event_eaten.wait()
         self.cashing()
 
 
@@ -66,14 +66,14 @@ class Customer(Thread):
     def eat(self):
         print("Customer starts eating")
         time.sleep(5)
-        condition_eaten.set()
+        event_eaten.set()
 
     def run(self):
         # notify waiter of its presence and make command
-        condition_customer.set()
+        event_customer.set()
 
         # wait for food
-        condition_receive_command.wait()
+        event_receive_command.wait()
 
         self.eat()
 

@@ -4,10 +4,11 @@
 # Why using threads is relevant for this type of exercise?
 #
 # - Lots of "supposedly" I/O operations with time.sleep()
-# - Shared memory is useful (queues, customer counter)
+# - Queues and counters can be shared among restaurant
+#   actors, allowing them to communicate information on
+#   customer commands
 # - No CPU consuming operations (or multiprocessing would
 #   have been more interesting)
-#
 #
 #
 # (C) 2019 Marion Vasseur, Paris, France

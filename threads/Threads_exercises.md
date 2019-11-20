@@ -5,8 +5,8 @@
 The goal of this exercise is to implement a Wall object that can be destroyed by Rocks objects. 
 The Wall object has an attribute *strength* that can take damage. It is initialized at 100.
 
-Each Rock object is a Thread that tries to destroy the Wall, by inflicting a random damage between 1 and 10.
-It takes one second for a Rock to perform this action and be available for another throw.
+Each Rock object is a Thread trying to destroy the Wall, by inflicting a random damage between 1 and 10.
+It takes one second for each Rock to be available for another throw.
 
 Launch the simulation with 5 Rocks. The output should display something like this:
 ```
@@ -30,17 +30,17 @@ Robot 2 did 2 damage to the wall. Remaining strength: 0
 
 ## Exercise 2
 
-The goal of this exercise is to implement a restaurant simulation where Customers can order and eat meals, a Waiters takes commands and brings them back to Customers, and a Cook cooks meals when an order is brought by the Waiter.
+The goal of this exercise is to implement a restaurant simulation where Customers can order and eat meals, a Waiter takes commands and brings them back to Customers, and a Cook cooks meals when an order is brought by the Waiter.
 
-A Customer takes 5 seconds to eat a meal.
+Each Customer takes 5 seconds to eat a meal.
 
 The Waiter takes 1 second to bring an order to the Cook, and 1 second to bring food to a Customer.  
 The Cook takes 5 seconds to cook a meal.  
-A the end of a meal, a Customer pays 5 euros to the Waiter.
+A the end of a meal, the Waiter makes the Customer pay 10 euros.
 
 ### Question 1 - Simple restaurant
 
-Using threads, implement a simple restaurant simulation where there is only one Cook, one Waiter and one Customer. The programs finishes when the Customer has paid the Waiter.
+Using threads, implement a simple restaurant simulation where there is only one Cook, one Waiter and one Customer. The program finishes when the Waiter gets money from the Customer.
 
 The output of the program should look like this:
 ```
@@ -49,4 +49,29 @@ Cook starts cooking pasta for customer Toto
 Waiter brings command pasta to customer Toto
 Customer Toto starts eating pasta
 Customer Toto pays for his meal
+Restaurant made 10 euros.
 ```
+
+### Question 2 - Complex restaurant
+
+Now take the previous program and modify it so that there can be multiple Customers. Each Customer arrives in the restaurant after a random time between 1 and 8 seconds and commands something to eat.
+
+The output of the program with 3 Customers should look like this:
+```
+Waiter takes command burger from customer 3 and brings it to Cook
+Cook starts cooking burger for customer 3
+Waiter takes command salad from customer 2 and brings it to Cook
+Waiter takes command sandwich from customer 1 and brings it to Cook
+Cook starts cooking salad for customer 2
+Waiter brings command burger to customer 3
+Customer 3 starts eating burger
+Cook starts cooking sandwich for customer 1
+Waiter brings command salad to customer 2
+Customer 3 pays 10 euros for his burger
+Customer 2 starts eating salad
+Waiter brings command sandwich to customer 1
+Customer 1 starts eating sandwich
+Customer 2 pays 10 euros for his salad
+Customer 1 pays 10 euros for his sandwich
+Restaurant made 30 euros.
+

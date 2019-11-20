@@ -1,8 +1,16 @@
 # -----------------------------------------------------------
 # Correction of Threads - Exercise 2 Question 2
+# 
+# Tips:
+# - Create a class Counter that can be shared between the Waiter
+#   and Customers, so that the Waiter knows when the service is
+#   done. 
+# - Create an Event to notify the Cook when service is done.
+# - Create an OrQueue class that allows the waiter to wait
+#   either for a customer to arrive, for a command to be 
+#   ready or for a customer to pay. 
 #
 # Why using threads is relevant for this type of exercise?
-#
 # - Lots of "supposedly" I/O operations with time.sleep()
 # - Queues and counters can be shared among restaurant
 #   actors, allowing them to communicate information on

@@ -1,3 +1,15 @@
+# -----------------------------------------------------------
+# Correction of Threads - Exercise 2 Question 1
+#
+# Tips:
+# - Each restaurant actor can be a Thread
+# - Use queues to share data between threads
+# 
+#
+# (C) 2019 Marion Vasseur, Paris, France
+#
+# -----------------------------------------------------------
+
 from threading import Thread
 from queue import Queue
 import time
@@ -25,11 +37,11 @@ class Cook(Thread):
         queues["order_ready"].put((command, customer_id))
 
     def run(self):
-        # wait for command from waiter
+        # Cook waits for command from waiter
         command, customer_id = queues["new_order"].get()
         queues["new_order"].task_done()
 
-        # cook
+        # Cook cooks the ordered meal
         self.cook(command, customer_id)
 
 

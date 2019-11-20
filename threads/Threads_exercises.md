@@ -54,7 +54,7 @@ Restaurant made 10 euros.
 
 ### Question 2 - Complex restaurant
 
-Now take the previous program and modify it so that there can be multiple Customers. Each Customer arrives in the restaurant after a random time between 1 and 8 seconds and commands something to eat.
+Now take the previous program and modify it so that there can be multiple Customers. Each Customer arrives in the restaurant after a random time between 1 and 8 seconds and commands something to eat.  Service is done when every Customer has finished its meal.
 
 The output of the program with 3 Customers should look like this:
 ```

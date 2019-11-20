@@ -30,12 +30,12 @@ Robot 2 did 2 damage to the wall. Remaining strength: 0
 
 ## Exercise 2
 
-The goal of this exercise is to implement a restaurant simulation where Customers can order and eat meals, Waiters take commands and brings them back to Customers, and Cooks cook meals when an order is brought by a Waiter.
+The goal of this exercise is to implement a restaurant simulation where Customers can order and eat meals, a Waiters takes commands and brings them back to Customers, and a Cook cooks meals when an order is brought by the Waiter.
 
 A Customer takes 5 seconds to eat a meal.
 
-A Waiter takes 1 second to bring an order to a Cook, and 1 second to bring food to a Customer.  
-A Cook takes 5 seconds to cook a meal.  
+The Waiter takes 1 second to bring an order to the Cook, and 1 second to bring food to a Customer.  
+The Cook takes 5 seconds to cook a meal.  
 A the end of a meal, a Customer pays 5 euros to the Waiter.
 
 ### Question 1 - Simple restaurant
@@ -44,9 +44,9 @@ Using threads, implement a simple restaurant simulation where there is only one 
 
 The output of the program should look like this:
 ```
-Waiter takes command and brings it to Cook
-Cook starts cooking
-Waiter brings command to Customer
-Customer starts eating
-Customer pays for his meal
+Waiter takes command pasta from customer Toto and brings it to Cook
+Cook starts cooking pasta for customer Toto
+Waiter brings command pasta to customer Toto
+Customer Toto starts eating pasta
+Customer Toto pays for his meal
 ```

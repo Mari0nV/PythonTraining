@@ -1,3 +1,19 @@
+# -----------------------------------------------------------
+# Correction of Threads - Exercise 2 Question 2
+#
+# Why using threads is relevant for this type of exercise?
+#
+# - Lots of "supposedly" I/O operations with time.sleep()
+# - Shared memory is useful (queues, customer counter)
+# - No CPU consuming operations (or multiprocessing would
+#   have been more interesting)
+#
+#
+#
+# (C) 2019 Marion Vasseur, Paris, France
+#
+# -----------------------------------------------------------
+
 from threading import Thread, Lock, Event
 from queue import Queue, Empty
 import time

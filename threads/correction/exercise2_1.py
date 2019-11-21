@@ -4,9 +4,6 @@
 # Tips:
 # - Each restaurant actor can be a Thread
 # - Use queues to share data between threads
-# 
-#
-# (C) 2019 Marion Vasseur, Paris, France
 #
 # -----------------------------------------------------------
 

@@ -16,8 +16,8 @@ candidates = {
 
 Create a class called ```ManageCandidate```, containing a dictionary attribute called ```candidates``` (which can be set in the initialization function of the class).
 Write the following methods for the ```ManageCandidate``` class:
-- ```add_candidate``` : add new candidate into the ```candidates``` attribute. Takes a tuple containing a name and a set of skills as parameter.
-- ```remove_candidate``` : remove candidate from the ```candidates``` attribute given its name. Takes a tuple containing a name and a set of skills as parameter.
+- ```add_candidate``` : add new candidate into the ```candidates``` attribute. Takes a name and a set of skills as parameters.
+- ```remove_candidate``` : remove candidate from the ```candidates``` attribute given its name.
 - ```add_skill``` : add a skill item into the set of skills of a candidate given its name.
 - ```remove_skill``` : remove a skill item into the set of skills of a candidate given its name.
 - ```get_all_skills``` : returns a set of all the skills contained in the ```candidates``` values, with no duplicates.

@@ -31,7 +31,7 @@ Write a method ```card_value``` which returns the value of the card passed in pa
 
 ### Question 4
 
-Write a function which returns all the cards sorted by their value.
+Write a function taking a deck instance as parameter and returning all the cards sorted by their value.
 
 
 ## Exercice 2 - Sets

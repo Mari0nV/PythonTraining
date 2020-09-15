@@ -1,36 +1,25 @@
 # Exercises on Python Data Structures
 
-## Exercice 2 - Class methods & Namedtuple
-
-The class ```Deck``` below contains an attribute called ```_cards``` representing a set of 52 playing cards.
-```
-import collections
-
-Card = collections.namedtuple("Card", ['rank', 'suit'])
-
-class Deck:
-    suits = "spades diamonds hearts clubs".split(" ")
-    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
-
-    def __init__(self):
-        self._cards = [Card(rank, suit) for suit in self.suits
-                                        for rank in self.ranks]
-```
+## Exercice 1 - Class methods & Namedtuple
 
 ### Question 1
 
-Write custom methods for the ```Deck``` class such that the following assertions become ```True```:
+Create a ```namedtuple``` object called ```Card``` containing two attributes: ```rank``` and ```suits```. Then create a list of 52 ```Card``` objects, one for each rank and suit that can be found in some french decks : *2,3...10, J, Q, K, A* for the ranks; and *spades, diamonds, hearts and clubs* for the suits.
+
+### Question 2
+
+Create a class ```Deck``` containing the list created previously as an attribute (set in the initialization method).
+Write custom methods for this class such that the following assertions return ```True```:
 ```
 deck = Deck()
 
 assert len(deck) == 52
-assert deck[0] == Card("2", "spades")
-assert deck[51] == Card("A", "clubs")
+assert isinstance(deck[0], Card)
 ```
 
-### Question 2
+### Question 3
 
-Write a method ```card_value``` which returns the value of each card, considering that *spades > diamonds > hearts > clubs*. For example, the 2 of spades will have a greater value than the 2 of diamonds, which will have a greater value than the 2 of hearts etc...
+Write a method ```card_value``` which returns the value of the card passed in parameter, considering that *spades > diamonds > hearts > clubs*. For example, the 2 of spades will have a greater value than the 2 of diamonds, which will have a greater value than the 2 of hearts etc...
 - 2 of clubs: 0
 - 2 of hearts: 1
 - 2 of diamonds: 2
@@ -39,6 +28,10 @@ Write a method ```card_value``` which returns the value of each card, considerin
 
      ⋮
 - As of spades: 51
+
+### Question 4
+
+Write a function which returns all the cards sorted by their value.
 
 
 ## Exercice 2 - Sets

@@ -1,6 +1,47 @@
-# Exercises on Sets
+# Exercises on Python Data Structures
 
-## Exercice 1 - Sets
+## Exercice 2 - Class methods & Namedtuple
+
+The class ```Deck``` below contains an attribute called ```_cards``` representing a set of 52 playing cards.
+```
+import collections
+
+Card = collections.namedtuple("Card", ['rank', 'suit'])
+
+class Deck:
+    suits = "spades diamonds hearts clubs".split(" ")
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+
+    def __init__(self):
+        self._cards = [Card(rank, suit) for suit in self.suits
+                                        for rank in self.ranks]
+```
+
+### Question 1
+
+Write custom methods for the ```Deck``` class such that the following assertions become ```True```:
+```
+deck = Deck()
+
+assert len(deck) == 52
+assert deck[0] == Card("2", "spades")
+assert deck[51] == Card("A", "clubs")
+```
+
+### Question 2
+
+Write a method ```card_value``` which returns the value of each card, considering that *spades > diamonds > hearts > clubs*. For example, the 2 of spades will have a greater value than the 2 of diamonds, which will have a greater value than the 2 of hearts etc...
+- 2 of clubs: 0
+- 2 of hearts: 1
+- 2 of diamonds: 2
+- 2 of spades: 3
+- 3 of clubs: 4
+
+     ⋮
+- As of spades: 51
+
+
+## Exercice 2 - Sets
 
 You are provided a dictionary containing names of candidates as keys and sets of skills as values:
 ```

@@ -1,4 +1,4 @@
-## Exercise 1 - Dunder methods, inspect and print - **
+## Exercise 1 - Dunder methods, inspect and print (**)
 
 In this exercise, you will implement a function called ```doc_function``` which take one or more user-defined function as parameters. 
 The role of this function is to print the name, the parameter names and the docstring of each parameter.
@@ -46,7 +46,7 @@ add            a, b           Same as a + b.
 ----------------------------------------------------------------------------------------------------
 ```
 
-## Exercise 2 - Dunder methods, dis module - ***
+## Exercise 2 - Dunder methods, dis module (***)
 
 The goal of this exercise is to modify the function below at runtime.
 ```

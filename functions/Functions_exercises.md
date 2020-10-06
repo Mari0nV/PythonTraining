@@ -1,10 +1,10 @@
-## Exercise 1 - Dunder methods, inspect and print (**)
+## Exercise 1 - Dunder methods, inspect and table format (**)
 
 In this exercise, you will implement a function called ```doc_function``` which take one or more user-defined function as parameters. 
 The role of this function is to print the name, the parameter names and the docstring of each parameter.
 
 To test your function, you can use these two user-defined functions as parameters:
-```
+```py
 def hypot(a, b):
     """Returns the hypotenuse of a right-angled triangle"""
     c = a ** 2 + b ** 2
@@ -34,7 +34,7 @@ Implement the ```doc_function``` using only dunder methods of the function objec
 
 ### Question 2
 
-Implement the ```doc_function``` using the ```inspect``` module. You'll be able to use your ```doc_function``` on built-in functions as well.
+Implement the ```doc_function``` using the ```inspect``` module. You'll be able to use your ```doc_function``` on built-in functions as well (with python version > 3.7).
 For example, you can pass the ```operator.add``` function as a parameter. The final output will be:
 ```
 ----------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ add            a, b           Same as a + b.
 ## Exercise 2 - Dunder methods, dis module (***)
 
 The goal of this exercise is to modify the function below at runtime.
-```
+```py
 def multiply_by_10(n):
     return n * 10
 ```
@@ -58,7 +58,7 @@ Implement a function called ```dont_mind_me``` which take the function above as 
 and change the *10* constant by *1* and the *multiply* operator by an *add* operator.
 
 You can test it with the code below:
-```
+```py
 def compute_things():
     print("First call to multiply_by_10:")
     for i in range(5):

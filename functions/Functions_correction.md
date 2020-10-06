@@ -21,7 +21,7 @@ def doc_function(*functions):
     print(dash)
 ```
 
-Explanation of the ```{:<15s}``` in ```format```: it means that 15 spaces will be allocated to print the string (*s* symbol), which will be aligned left (*<* symbol).
+Explanation of the ```{:<15s}``` in ```format```: it means that 15 spaces will be allocated to print the string (*s* symbol), which will be aligned left (*<* symbol). We could also have use the tabulate module (package python-tabulate) which create very pretty tables.
 
 ### Question 2
 ```

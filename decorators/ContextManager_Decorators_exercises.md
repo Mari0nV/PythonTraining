@@ -6,7 +6,7 @@ A context manager provides a way to automatically execute some instructions befo
 It can be defined as a class containing the ```__enter__``` and ```__exit__``` methods.
 
 You probably know the following python syntax:
-```
+```py
 with open("file.txt", "r") as fd:
     print(fd.read())
 ```
@@ -17,7 +17,7 @@ In the following questions, you will be asked to re-implement this context manag
 
 Write your own context manager such that the following code is doing the same as the previous one:
 
-```
+```py
 with MyOpenContextManager("file.txt") as fd:
     print(fd.read())
 ```
@@ -26,7 +26,7 @@ with MyOpenContextManager("file.txt") as fd:
 
 Same question but using the module contextlib.contextmanager
 
-```
+```py
 with my_open_func("file.txt") as fd:
     print(fd.read())
 ```
@@ -35,7 +35,7 @@ with my_open_func("file.txt") as fd:
 
 Young Esmeralda is not very polite yet. When she goes to the bakery, she just ask for what she wants in an abrupt way.
 
-```
+```py
 def i_want(item):
   return(f"I want {item}")
 ```
@@ -46,7 +46,7 @@ Her mother is not pleased with that and wants her to learn to say "Hello" before
 
 Write a decorator that add *Hello* before Esmeralda's message and *please* afterwards.
 
-```
+```py
 @polite
 def i_want(item):
   return(f"I want {item}")
@@ -58,7 +58,7 @@ print(i_want("some bread")) # must print "Hello I want some bread please"
 
 Write a context manager that does the same thing.
 
-```
+```py
 with PoliteContextManager():
     print(i_want("some bread")) 
 # must print "Hello I want some bread please"
@@ -73,7 +73,7 @@ In which case is it better to implement a decorator instead of a context manager
 Esmeralda's mother is still not happy, and wants Esmeralda to say "I would like" instead of "I want".
 Find a way to make it happen without modifying the *i_want* function, with the help of a decorator.
 
-```
+```py
 @polite
 @rewrite_func
 def i_want(item):

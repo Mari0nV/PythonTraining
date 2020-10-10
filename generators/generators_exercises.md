@@ -2,7 +2,11 @@
 
 ### Question 1
 
-Build a generator function that takes an integer as parameter and yields multiples of 5 up to this number. Then, call this generator with ```100``` parameter and print only the two first elements.
+Build a generator function that takes an integer as parameter and yields multiples of 5 up to this number.
+
+```multiples(16)``` --> 5 10 15
+
+Then, call this generator with ```100``` parameter and print only the first element.
 
 ### Question 2
 

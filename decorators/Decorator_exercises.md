@@ -28,10 +28,10 @@ factorial(6) -> 720 in 0.00001097s
 
 ### Question 3
 
-Modify the previous decorator such that it can take a ```digits``` parameter, corresponding to the number of digits you want to see printed.
+Modify the previous decorator such that it can take an optional ```unit``` parameter. If ```unit``` is equal to "ms", then the execution time must be printed in milliseconds. Otherwise, it will be printed in seconds.
 
 ```py
-@time_exec(5)  # Will print execution time with 5 digits after comma
+@time_exec("ms")  # Will print execution time in ms
 def factorial(n):
     result = 1
     for i in range(1, n + 1):

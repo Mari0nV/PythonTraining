@@ -5,12 +5,12 @@
 Create a dictionary from the two lists above:
 ```py
 keys = ['name', 'age', 'profession']
-values = ["Bob", 25, "developper"]
+values = ["Bob", 25, "developer"]
 ```
 
 The output should be:
 ```py
-{"name": "Bob", "age": 25, "profession": "developper"}
+{"name": "Bob", "age": 25, "profession": "developer"}
 ```
 
 Propose two different ways to construct this dictionary.

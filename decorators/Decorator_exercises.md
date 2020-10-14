@@ -39,6 +39,36 @@ def factorial(n):
     return result
 ```
 
+## Exercise 2 🌶🌶
+
+In this exercise, we're going to 'mimick' Flask decorators in a very simplified way.
+
+Create a class ```App``` such that the following code registers the decorated functions into
+a ```route_dict``` dictionary.
+
+For example, for this code:
+```py
+app = App()
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    return "Welcome"
+
+@app.route("/new_user", methods=["POST"])
+def user():
+    print("Added user")
+
+print(app.route_dict)
+```
+
+```app.route_dict``` will look like:
+
+```py
+{
+   'GET': [{'/': 'index'}],
+   'POST': [{'/': 'index'}, {'/new_user': 'user'}]
+}
+```
 
 
 

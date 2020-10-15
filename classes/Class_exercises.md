@@ -55,8 +55,12 @@ Modify the ```Point``` class to make it immutable.
 
 ```
 >>> p1 = Point(1, 1)
+>>> p1.x
+1
 >>> p1.x = 3
 Traceback (most recent call last):
  ...
 AttributeError: can't set attribute
 ```
+
+Is there still a way to modify its attributes? (Other than calling the ```move``` method)

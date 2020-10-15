@@ -1,4 +1,4 @@
-## Exercise 1 🌶
+## Exercise 1 🌶🌶
 
 The goal is to write a class ```Point``` representing a point in 2D dimension, in a nice pythonic way.
 

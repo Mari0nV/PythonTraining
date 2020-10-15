@@ -57,10 +57,14 @@ class Point:
     @property
     def x(self):
         return self.x
-    
+
     @property
     def y(self):
         return self.y
+
+    def move(self, x, y):
+        self.__x += x
+        self.__y += y
  ```
  
  The other dunder methods can stay the same. 
@@ -74,4 +78,6 @@ class Point:
  Point(3, 3)
  ```
  
- Protecting attributes in Python is just a way to prevent accidental overwriting of "private" attributes, but it is not a security measure.
+This feature is called *name mangling*.
+
+Protecting attributes in Python is just a way to prevent accidental overwriting of "private" attributes, but it is not a security measure.

@@ -24,7 +24,7 @@ def cycle(s):
 
 
 c = cycle("ABCD")
-for i in range(20):
+for i in range(10):
     print(next(c))
 ```
 
@@ -76,7 +76,6 @@ class AccumulateGenerator:
         self.op = op
         self.next = initial if initial else next(self.iterable)
         self.total = self.next
-        self.last = False
 
     def __iter__(self):
         return self

@@ -10,6 +10,14 @@ Then, call this generator with ```20``` parameter and print only the first eleme
 
 ### Question 2
 
+Build a generator function called ```cycle``` such that:
+
+```cycle('ABCD')``` --> A B C D A B C D A B C D ... This is similar behavior as ```itertools.cycle```.
+
+Then, print the 10 first elements of ```cycle('ABCD')```
+
+### Question 3
+
 Build a generator function called ```accumulate``` such that:
 
 ```accumulate([1,2,3,4,5])``` --> 1 3 6 10 15
@@ -20,27 +28,10 @@ Build a generator function called ```accumulate``` such that:
 
 This is similar behavior as ```itertools.accumulate```.
 
-### Question 3
-
-Build a generator function called ```cycle``` such that:
-
-```cycle('ABCD')``` --> A B C D A B C D A B C D ...
-
-This is similar behavior as ```itertools.cycle```.
 
 ## Exercice 2 - class generators 🌶🌶
 
-Implement two classes called ```AccumulateGenerator``` and ```CycleGenerator``` which have the same behavior as the functions ```accumulate``` and ```cycle``` from *Exercise 1*.
-
-```py 
-accumulate = AccumulateGenerator([1,2,3,4,5])
-for value in accumulate:
-    print(value)  # 1 3 6 10 15
-
-cycle = CycleGenerator('ABCD')
-for value in cycle:
-    print(value)  # A B C D A B C D A B C D ...
-```
+Implement two classes called ```CycleGenerator``` and ```AccumulateGenerator``` which have the same behavior as the functions ```cycle``` and ```accumulate``` from *Exercise 1*.
 
 
 ## Exercise 3 - generator expressions 🌶 

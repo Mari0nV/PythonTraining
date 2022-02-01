@@ -1,6 +1,6 @@
 # Exercises on Python Class Data Structures
 
-## Exercice 1 - Class Chapter & Book
+## Exercice 1 - Classes Chapter & Book
 
 You work on a text edition software and need to handle the text that is written by a user.
 

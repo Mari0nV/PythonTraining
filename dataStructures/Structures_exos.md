@@ -70,7 +70,7 @@ Delete the item (A, 2) from the dictionary.
 Print the sum of all values contained in the dictionary.
 
 
-## Exercise 2
+## Exercise 3 - List manipulation
 
 You can test the following exercise with this input list :
 ```input_list = ['eddard', 'catelyn', 'robb', 'sansa', 'arya', 'brandon',
@@ -88,7 +88,7 @@ This function must return all the words contained in the input list that contain
 
 example: ```word_letter_position(input_list, 'y', 1)``` will return ```['tywin', 'tyrion']```
 
-## Exercise 3 - strings
+## Exercise 4 - Strings
 
 ### Question 1
 
@@ -129,6 +129,29 @@ Expected output:
 ```
 ["In Python, there is three distinct numeric types.", "Integers, floating points and complex numbers!", "In addition, Booleans are a subtype of Integers."]
 ```
+
+### Question 4
+
+Given the list of sentences obtained in previous question, create a dictionary which associate each word found with its number of occurrence in the list. It will be case insensitive.
+
+Example
+
+Input:
+```
+["In Python, there is three distinct numeric types.", "Integers, floating points and complex numbers!", "In addition, Booleans are a subtype of Integers."]
+```
+
+Expected output:
+```
+{
+  "in": 2,
+  "python": 1,
+  "there": 1,
+  "is": 1,
+  ...
+}
+```
+
 
 
 

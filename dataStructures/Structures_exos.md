@@ -33,6 +33,10 @@ Print the three first elements of the list.
 
 Print the list in reverse order.
 
+### Question 7
+
+Find two ways to order the list: one that modify the list, the other that does not modify it.
+
 ## Exercice 2 - Dict manipulation
 
 ### Question 1

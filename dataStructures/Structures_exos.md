@@ -96,10 +96,11 @@ Write a function that decompose a database url and create a dictionary containin
 
 Example:
 
-input : ```"postgresql://some_user:password123@my_db_uri/my_db_name:5432"``` 
+Input : ```"postgresql://some_user:password123@my_db_uri/my_db_name:5432"``` 
 
-expected_output: 
-```{
+Expected_output: 
+```
+{
   "user": "some_user",
   "password": "password",
   "host": "my_db_uri",
@@ -108,8 +109,26 @@ expected_output:
 }
 ```
 
-### Question 32
+### Question 2
 
 Write a function that detects if a string is a palindrome or not.
+
+### Question 3
+
+Write a function that takes a paragraph as input and return a list of sentences.
+Each sentence letter must being with an Uppercase letter and end with a punctuation letter.
+
+Example
+
+Input:
+```
+"in Python, there is three distinct numeric types. integers, floating points and complex numbers! in addition, Booleans are a subtype of Integers"
+```
+
+Expected output:
+```
+["In Python, there is three distinct numeric types.", "Integers, floating points and complex numbers!", "In addition, Booleans are a subtype of Integers."]
+```
+
 
 

@@ -88,6 +88,28 @@ This function must return all the words contained in the input list that contain
 
 example: ```word_letter_position(input_list, 'y', 1)``` will return ```['tywin', 'tyrion']```
 
+## Exercise 3 - strings
 
+### Question 1
+
+Write a function that decompose a database url and create a dictionary containing the fields user, password, host, db_name and port.
+
+Example:
+
+input : ```"postgresql://some_user:password123@my_db_uri/my_db_name:5432"``` 
+
+expected_output: 
+```{
+  "user": "some_user",
+  "password": "password",
+  "host": "my_db_uri",
+  "db_name": "my_db_name",
+  "port": 5432 
+}
+```
+
+### Question 32
+
+Write a function that detects if a string is a palindrome or not.
 
 

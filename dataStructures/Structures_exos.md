@@ -33,7 +33,6 @@ Print the three first elements of the list.
 
 Print the list in reverse order.
 
-
 ## Exercice 2 - Dict manipulation
 
 ### Question 1
@@ -61,6 +60,10 @@ Multiply all the values of the dictionary by 2.
 ### Question 5
 
 Delete the item (A, 2) from the dictionary.
+
+### Question 6
+
+Print the sum of all values contained in the dictionary.
 
 
 ## Exercise 2

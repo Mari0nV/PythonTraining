@@ -41,12 +41,17 @@ def factorial(n):
 
 ## Exercise 2 🌶
 
+### Question 1
 
 Write a **multiply* function that multiply two numbers and return the result.
 
 Write a decorator that cache the parameters and result of each call to *multiply* into a global dictionnary.
 
 Before each call to **multiply**, verify if it was already called before with the same parameters by looking at the dictionary. If it was alreayd, just return the result stored into the dictionary instead of calling **multiply**.
+
+### Question 2
+
+Write a decorator that limit the number of executions authorized for a function. This decorator will take a parameter **nb_executions** that represent the max of executions authorized. If a decorated function was called too many times, raise a customized exception called **LimitExcedeed**.
 
 ## Exercise 3 🌶🌶
 

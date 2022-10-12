@@ -39,7 +39,16 @@ def factorial(n):
     return result
 ```
 
-## Exercise 2 🌶🌶
+## Exercise 2 🌶
+
+
+Write a **multiply* function that multiply two numbers and return the result.
+
+Write a decorator that cache the parameters and result of each call to *multiply* into a global dictionnary.
+
+Before each call to **multiply**, verify if it was already called before with the same parameters by looking at the dictionary. If it was alreayd, just return the result stored into the dictionary instead of calling **multiply**.
+
+## Exercise 3 🌶🌶
 
 In this exercise, we're going to 'mimick' Flask decorators in a very simplified way.
 
